@@ -1,0 +1,80 @@
+<html xmlns:th="https://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+    <head>
+        <title>Buy Ticket</title>
+        <link rel="stylesheet" href="css/movieDetails.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+
+    <body>
+    	<div th:replace="fragments/menu.html"></div>
+    	<header th:insert="fragments/header.html :: header"></header>
+        <h2 id="hadder">Movie Details</h2>
+        
+        <form th:action="@{/buy}" onSubmit="return validateForm()" method="GET">
+
+            <div th:each="movie:${movies}">
+            
+            	<input type="hidden" name = "movieId" th:value="${movie.movieId}">
+            	<input type="hidden" name = "movieName" th:value="${movie.movieName}"/>
+            	
+            	<table class="center">
+            		<tr>
+      					<td><img id="image" th:src="${movie.imgPath}"  width="300px"></td>
+            		</tr>
+            	</table>
+            	
+            	<table class="center">
+            	
+                <tr>
+                    <td>Movie Name: </td>
+                    <td th:text="${movie.movieName}"></td>
+                </tr>
+                <tr>
+                    <td>Number of tickets Availible: </td>
+                    <td th:text="${movie.ticket_count}"></td>
+                </tr>
+
+            
+			<tr>
+            	<td><label for="ticket_count">Number of Tickets: </label></td>
+            	<td><input type="number" name="ticket_count" placeholder="Number of ticket" min=1 th:max="${movie.ticket_count}" required/></td>
+            </tr>
+            
+            <tr>
+            	<td><label for="date">Date: </label></td>
+            	<td>
+            		<select id="dateS" name="dates" required>
+                         <option>Please select..</option>
+                         <option th:each="date:${dates}" th:value="${date}" th:text="${date}"></option>
+                    </select>
+                    <span id="missing">Please select the appropriate option</span>
+            	</td>
+            </tr>
+            
+            <tr>
+            	<td><label for="student">Are PROG 32758 Student? </label></td>
+            	<td><input type="checkbox" name="student" id="student"/></td>            	
+            <tr>
+            
+            <tr>
+                   <td>Prize of 1 ticket: </td>
+                   <td>
+                   		<span>$</span>
+                   		<span id="price" th:text="${price}"></span>
+                   </td>
+                   <td><input type="hidden" name="price" id="input" th:value="${price}"/></td>
+             </tr>
+            
+        </table>
+        </div>
+            <input type="submit" value="Buy"/>
+        </form>
+        
+        <footer th:replace="fragments/footer.html :: footer"></footer>
+
+    </body>
+    
+    <script src="js/script.js"></script>
+
+</html>

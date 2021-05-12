@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+    <head>
+        <title>Register</title>
+        <link rel="stylesheet" href="css/register.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+
+    <body>
+            <h2 id="hadder">Welcome to the Registration page</h2>
+        
+
+        <form th:action="@{/register}" onSubmit="return validateForm()" method="POST">
+            
+            <h2>Registration Form</h2>
+
+            <div class="register_container">
+
+                <label for="firstname">First Name</label>
+                <input type="text" name="firstName" placeholder="Enter first name" required/>
+                
+                <label for="lastname">Last Name</label>
+                <input type="text" name="lastName" placeholder="Enter last name" required/>
+                
+                <label >Are you a Student: </label> 
+                <input type="checkbox" name="checkbox" id="studentCB">
+                
+                <br>
+                <div id="college">
+                	<label for="collgeS">Select your college: </label>  
+               		<select id="collegeS" name="college"  required>
+                		<option>Please select..</option>
+                   		<option value= "SHERIDAN">Sheridan</option>
+                    	<option value= "HUMBER">Humber</option>
+                    	<option value= "SENICA">Senica</option>
+                	</select>
+                	<span id="missing">Please select the appropriate option</span>
+                </div>
+                <br>
+
+                <label for="username">User Name</label>
+                <div th:switch= "${exist}">
+                	<span id="existed" th:case= "true">username already existed</span>
+                </div>
+                <input type="text" name="userName" placeholder="Enter username" required/>
+                <label for="password">Password</label>
+                <input type="password" name="password" placeholder="Enter Password" required/>
+                
+                <label for="age">Age</label>
+                <input type="number" name="age" placeholder="Enter your age" min="1" max="123" required/>
+                
+                <br><br>
+
+                <label>
+                    <input type="checkbox" name="Rmb" required> I accept Conditions of Use and Privacy Notice of this site. 
+                </label>
+                
+                <br><br>
+                
+                <input type="submit" value="Registor"/>
+                
+                <br>
+
+                <hr>
+
+                <div class="container">
+                    <span id="accountExisted">Already have an account? <a href="http://localhost:8080/login">sign in</a></span>
+                </div>
+
+            </div>
+
+        </form>
+
+    </body>
+
+	<script src="js/MDScript.js"></script>
+
+</html>

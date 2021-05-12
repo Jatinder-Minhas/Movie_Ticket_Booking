@@ -1,0 +1,55 @@
+<html xmlns:th="https://www.thymeleaf.org">
+    <head>
+        <title>Login</title>
+        <link rel="stylesheet" href="css/login.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+
+    <body>
+            <h2 id="hadder">Welcome to the Login page</h2>
+        
+
+        <form th:action="@{/login}" method="POST">
+            
+            <h2>Login Form</h2>
+            
+            <div th:if="${param.error}">
+                    <div class="alert ">
+                        Invalid username or password.
+                    </div>
+                    <br>
+                </div>
+                   
+                 <div th:if="${param.logout}">
+                    <div class="alert ">
+                        You have been logged out.
+                    </div>
+                    <br>
+                </div>
+
+            <div class="login_container">
+
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" placeholder="Enter Username" required/>
+                
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" placeholder="Enter Password" required/>
+                
+                <input type="submit" value="Login"/>
+
+                <br><br>
+
+                <div class="container">
+
+                    <a href="http://localhost:8080/register" ><input type="button" class="btnRegistor" value="Registor"></a>
+                    <span class="password">Forgot <a href="#">Password</a></span>
+
+                </div>
+
+            </div>
+
+        </form>
+
+    </body>
+
+</html>

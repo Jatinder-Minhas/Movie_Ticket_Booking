@@ -1,0 +1,63 @@
+<html xmlns:th="https://www.thymeleaf.org">
+
+    <head>
+        <title>Buy Ticket</title>
+        <link rel="stylesheet" href="css/buyDetails.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+
+    <body>
+    
+    	<div th:replace="fragments/menu.html"></div>
+    	<header th:insert="fragments/header.html :: header"></header>
+    
+        <div id="container">
+        	<h2 id="hadder">Purchase Details</h2>
+            	
+            	<table>
+            	
+            	<tr>
+                    <td>Name: </td>
+                    <td th:text="${session.userName}"></td>
+                </tr>
+            	
+                <tr>
+                    <td>Movie Name: </td>
+                    <td th:text="${movieName}"></td>
+                </tr>
+                <tr>
+                    <td>Number of tickets brought: </td>
+                    <td th:text="${ticket_count}"></td>
+                </tr>
+
+            	<tr>
+            		<td>Price of 1 Ticket: </td>
+            		<td > 
+            			<span>$</span>
+            			<span th:text="${price}"></span>
+            			
+            		</td>
+            	</tr>
+            	
+            	<tr>
+            		<td>Total Price: </td>
+            		<td>
+            			<span>$</span>
+            			<span th:text="${totalPrice}"></span> 
+            		</td>
+            	</tr>
+            	
+            	<tr>
+            		<td>Date and Time: </td>
+            		<td th:text="${date}"> </td>
+            	</tr>
+        </table>
+        </div>
+
+	<footer th:replace="fragments/footer.html :: footer"></footer>
+
+    </body>
+    
+    <script src="js/script.js"></script>
+
+</html>

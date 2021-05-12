@@ -1,0 +1,25 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org"
+	  xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+	<body>
+		<nav class="box" id="navbar">
+
+                <img src="images/LogoMakr_9MukVG.png" alt="Movies">
+
+                <ul>
+                    <li sec:authorize= "isAuthenticated()">
+  						<a th:href="@{/user}">Home</a>
+					</li>
+					<li sec:authorize= "isAnonymous()">
+  						<a th:href="@{/}">Home</a>
+					</li>
+                    <li sec:authorize= "isAuthenticated()">
+  						<a th:href="@{/logout}">Logout</a>
+					</li>
+					<li sec:authorize= "isAnonymous()">
+  						<a th:href="@{/user}">Login</a>
+					</li>
+                 </ul>
+            </nav>
+	</body>
+</html>

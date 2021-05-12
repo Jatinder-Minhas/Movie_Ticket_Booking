@@ -1,0 +1,5 @@
+Movie Name: Shutter Island
+Number of Tickets: 2
+Date and Time: 2020-10-20 12:00:00.0
+Price of 1 Ticket: 15.0
+Total Price: 30.0

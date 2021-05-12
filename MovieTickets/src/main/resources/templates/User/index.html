@@ -1,0 +1,44 @@
+<!DOCTYPE html5>
+
+<Html xmlns:th="http://www.thymeleaf.org"
+	  xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+    <head>
+        <link rel="stylesheet" href="css/style.css">
+        <title>Movies</title>
+    </head>
+
+    <body>
+        <div class = "wrapper">
+           	<div th:replace="fragments/menu.html"></div>
+    		<header th:insert="fragments/header.html :: header"></header>
+            
+            <h2>Available Movies</h2>
+
+        <div th:class="flexParent">
+
+            <section th:class="flexChild"  th:each="movie:${movies}"  class = "box" id = "content" >     
+
+
+                <div class="movieData">
+
+                    <div class="movieImg">
+                    
+                    <form th:action="@{/details}" method="POST">
+                    	<input type="hidden" name="movieId" th:value="${movie.movieId}"/>
+                    	<input type="image" th:src="${movie.imgPath}" alt="submit" width="150px">
+                    </form>
+
+                    </div>
+                    
+                    <h2 th:text="${movie.movieName}"></h2>
+                </div>
+
+            </section>
+            
+        </div>
+          
+     </div>
+        
+        <footer th:replace="fragments/footer.html :: footer"></footer>
+    </body>
+</Html>

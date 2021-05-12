@@ -1,0 +1,103 @@
+body
+{
+    font-family: Arial, Helvetica, sans-serif;
+}
+form 
+{
+    background-color: #f1f1f1;
+    margin: auto;
+    margin-top: 5%;
+    padding: 30px;
+    width:50%;
+    border: 3px solid #f1f1f1;
+}
+
+input[type=text], input[type=password], input[type=number] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+input[type=submit]
+{
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+
+input[type=submit]:hover
+{
+    opacity: 0.8;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+
+
+.btnRegistor 
+{
+    width: auto;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    background-color: coral;
+}
+
+.container {
+    text-align: center;
+  padding: 16px;
+}
+
+#accountExisted {
+  text-align: center;
+  padding-top: 16px;
+}
+
+#hadder
+{
+    color: coral;
+    text-align: center;
+    margin-top: 50px;
+}
+
+h2
+{
+    text-align: center;
+    color: lightgreen;
+}
+
+#image
+{
+	margin: 0px 0px 0px 50px;
+	padding: 20px;
+}
+
+select {
+	margin: 10px 30px;
+}
+
+#college
+{
+	display:none;
+}
+
+#missing
+{
+	display:none;
+	color:red;
+}
+
+#existed
+{
+	color:red;	
+}

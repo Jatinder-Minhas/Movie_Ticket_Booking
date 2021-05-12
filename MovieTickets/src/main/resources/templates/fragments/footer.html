@@ -1,0 +1,31 @@
+<!DOCTYPE HTML >
+<html xmlns:th="http://www.thymeleaf.org"
+	  xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+	  <head>
+	  	<link rel="stylesheet" href="css/footer.css">
+	  </head>
+	<body>
+	
+		<footer th:fragment="footer" class = "box" id = "footer"><p>
+                <div id = "altnav" class="flexBox">
+                	<span sec:authorize= "isAuthenticated()">
+  						<a th:href="@{/user}">Home</a> |
+					</span>
+					<span sec:authorize= "isAnonymous()">
+  						<a th:href="@{/}">Home</a> |
+					</span>
+                    <span sec:authorize= "isAuthenticated()">
+  						<a th:href="@{/logout}">Logout</a>
+					</span>
+					<span sec:authorize= "isAnonymous()">
+  						<a th:href="@{/user}">Login</a>
+					</span>          
+                </div>
+			
+				<br>
+
+                Copyright &copy: Jatinderjit Singh Minhas <br><br>
+       		</footer>
+       		
+	</body>
+</html>

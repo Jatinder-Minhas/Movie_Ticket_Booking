@@ -1,0 +1,169 @@
+
+body
+{
+    font-family: Arial, Helvetica, sans-serif;
+    width:100%;
+}
+
+.box
+{
+    
+    box-sizing: border-box;
+    color: white;
+    padding: 2px;
+    font-size: 18px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+nav
+{
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    width: 100%;
+    opacity: 1;
+    background-color: black;
+    text-align: right;
+    margin: 0px;
+}
+
+nav img 
+{
+    max-width: 180px;
+    float: left;
+}
+
+nav a
+{
+    border-radius: 5px;
+    padding: 10px 10px;
+    background: orange;
+    overflow: hidden;
+    color: white;
+    display: block;
+    text-decoration: none;
+    float: right;
+}
+
+nav a:active
+{
+    background-color: orange;
+}
+
+nav a:hover
+{
+    border-radius: 5px;
+    background-color: #ffb424;
+    box-shadow: 0px,1px,1px,#666666;
+    text-decoration: underline;
+    box-shadow: 5px 5px 5px black;
+    transition: all 0.3s ease-in-out;
+    transform: scale(1.05, 1.05);
+}
+
+#selected
+{
+    background-color: #DB6D16;
+    box-sizing: none;
+    cursor: default;
+    text-decoration: none;
+    transform: none;
+}
+
+nav ul
+{
+    margin: 0px 4px 0px 0px;
+    padding: 0px;
+    margin: 0px 20px;
+    list-style-type: none;
+}
+
+nav ul li
+{
+    display: inline-block;
+}
+
+nav li
+{
+    margin: 0px 5px;
+}
+
+form 
+{
+    background-color: #f1f1f1;
+    margin: auto;
+    margin-top: 5%;
+    padding: 30px;
+    width:50%;
+    border: 3px solid #f1f1f1;
+}
+
+#container 
+{
+    background-color: #f1f1f1;
+    margin: auto;
+    margin-top: 5%;
+    padding: 30px;
+    width:50%;
+    border: 3px solid #f1f1f1;
+}
+
+#footer
+{
+	position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 100px;
+    width: 100%;
+    overflow: hidden;
+	padding: 3px 10px;
+	color: white;
+    opacity: 1;
+    background-color: #000;
+    font-size: 14px;
+}
+
+footer a 
+{
+    color: #f1f1f1;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+footer a:hover
+{
+    color: #db6d16;
+}
+
+#altnav
+{
+    text-align: right;
+    font-size: 14px;
+}
+
+footer h3
+{
+    text-align: center;
+}
+
+header
+{
+	overflow: hidden;
+	width: 100%;
+    margin-top: 0px;
+    background: linear-gradient(to right, red, blue);
+    font-size: 24px;
+    height: 200px;
+    opacity: 0.8;
+}
+
+header h1
+{
+    margin: 50px 0px 0px 0px;
+    float: right;
+    font-size: 20px;
+    color: #DB6D16;
+    padding: 80px 20px 80px 20px;
+}
