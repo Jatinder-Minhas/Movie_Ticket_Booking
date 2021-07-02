@@ -81,9 +81,6 @@ public class HomeController {
 			@RequestParam double price, @RequestParam long movieId,
 			@RequestParam String movieName)
 	{
-		WriteInFile write = new WriteInFile();
-		
-		write.writeForUser(movieName, price, ticket_count, dates);
 		da.updateMovieDetails(movieId, ticket_count);	
 		
 		model.addAttribute("movieName", movieName);
@@ -100,9 +97,6 @@ public class HomeController {
 			@RequestParam double price, @RequestParam long movieId,
 			@RequestParam String movieName)
 	{
-		WriteInFile write = new WriteInFile();
-		
-		write.writeForNonUser(movieName, price, ticket_count, dates);
 		model.addAttribute("movieName", movieName);
 		model.addAttribute("ticket_count", ticket_count);
 		model.addAttribute("price", price);
