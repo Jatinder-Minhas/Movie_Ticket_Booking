@@ -40,7 +40,7 @@ public class HomeController {
 	public String goHomeUser(Model model)
 	{
 		model.addAttribute("movies", da.getMovies());
-		return "/user/index";
+		return "/User/index";
 	}
 	
 	@GetMapping("/details")
