@@ -40,14 +40,7 @@ public class HomeController {
 	public String goHomeUser(Model model)
 	{
 		model.addAttribute("movies", da.getMovies());
-		return "index.html";
-	}
-	
-	@PostMapping("/user")
-	public String goUser(Model model)
-	{
-		model.addAttribute("movies", da.getMovies());
-		return "/user/index.html";
+		return "/user/index";
 	}
 	
 	@GetMapping("/details")
