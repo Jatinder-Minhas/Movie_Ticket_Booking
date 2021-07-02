@@ -43,6 +43,13 @@ public class HomeController {
 		return "/user/index.html";
 	}
 	
+	@PostMapping("/user")
+	public String goUser(Model model)
+	{
+		model.addAttribute("movies", da.getMovies());
+		return "/user/index.html";
+	}
+	
 	@GetMapping("/details")
 	public String goCheckDetails(Model model, @RequestParam String movieId)
 	{
