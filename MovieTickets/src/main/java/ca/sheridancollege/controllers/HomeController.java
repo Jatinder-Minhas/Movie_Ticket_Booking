@@ -40,7 +40,7 @@ public class HomeController {
 	public String goHomeUser(Model model)
 	{
 		model.addAttribute("movies", da.getMovies());
-		return "/User/index.html";
+		return "User/index.html";
 	}
 	
 	@GetMapping("/details")
@@ -73,7 +73,7 @@ public class HomeController {
 		model.addAttribute("dates", da.getMovieDatesById(Integer.parseInt(movieId)));
 		model.addAttribute("price", movie.getPrice(da, userName));
 		
-		return "/User/MovieDetails.html";
+		return "User/MovieDetails.html";
 	}
 	
 	@PostMapping("/buy")
@@ -92,7 +92,7 @@ public class HomeController {
 		model.addAttribute("totalPrice", (price * (double)ticket_count));
 		model.addAttribute("date", dates);
 		
-		return "/User/BuyDetails";
+		return "User/BuyDetails";
 	}
 	
 	@GetMapping("/buy")
