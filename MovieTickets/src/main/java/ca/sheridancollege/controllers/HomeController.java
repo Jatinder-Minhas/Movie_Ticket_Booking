@@ -121,6 +121,12 @@ public class HomeController {
 		return "login.html";
 	}
 	
+	@PostMapping("/login")
+	public String goLogin()
+	{
+		return "login.html";
+	}
+	
 	@GetMapping("/access-denied")
 	public String goAccessDenied()
 	{
