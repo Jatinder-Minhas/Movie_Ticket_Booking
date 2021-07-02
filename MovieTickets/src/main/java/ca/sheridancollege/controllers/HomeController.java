@@ -92,7 +92,7 @@ public class HomeController {
 		model.addAttribute("totalPrice", (price * (double)ticket_count));
 		model.addAttribute("date", dates);
 		
-		return "User/BuyDetails";
+		return "User/BuyDetails.html";
 	}
 	
 	@GetMapping("/buy")
